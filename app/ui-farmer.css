@@ -1,0 +1,360 @@
+/* HerdSignal — farmer views.
+   Scoped under .v-farmer (each farmer view's root element carries that class).
+   Mobile-first: single column at 360 px; uses shell design tokens and the
+   shared component classes (.card, .btn, .field, .chip, .badge, .empty). */
+
+.v-farmer {
+  max-width: 42rem;
+  margin-inline: auto;
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* Keep hidden field-error slots truly invisible even if the shell gives
+   .field__error a display rule. */
+.v-farmer [hidden] {
+  display: none !important;
+}
+
+/* ---------- home ---------- */
+
+.v-farmer__title {
+  margin: 0 0 var(--space-2);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.v-farmer__lead {
+  margin: 0 0 var(--space-3);
+  font-size: 1.05rem;
+}
+
+.v-farmer__persona {
+  margin: 0 0 var(--space-4);
+}
+
+.v-farmer__cta {
+  width: 100%;
+  font-size: 1.15rem;
+  padding: var(--space-3) var(--space-4);
+}
+
+.v-farmer__secondary {
+  width: 100%;
+  margin-top: var(--space-2);
+}
+
+.v-farmer__lochint {
+  margin: var(--space-3) 0 0;
+  font-size: 0.9rem;
+}
+
+.v-farmer__openline {
+  margin: 0 0 var(--space-3);
+  font-weight: 600;
+}
+
+.v-farmer__h2 {
+  margin: 0 0 var(--space-3);
+  font-size: 1.1rem;
+}
+
+.v-farmer__h3 {
+  margin: var(--space-4) 0 var(--space-1);
+  font-size: 1rem;
+}
+
+.v-farmer__subhead {
+  margin: 0 0 var(--space-2);
+  font-size: 1rem;
+}
+
+.v-farmer__subsubhead {
+  margin: var(--space-3) 0 var(--space-1);
+  font-size: 0.9rem;
+}
+
+.v-farmer__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.v-farmer__step {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.v-farmer__stepnum {
+  flex: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--brand-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+}
+
+/* ---------- report form ---------- */
+
+.v-farmer__group {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin: 0 0 var(--space-4);
+  min-width: 0;
+}
+
+.v-farmer__group:last-of-type {
+  margin-bottom: 0;
+}
+
+.v-farmer__legend {
+  font-weight: 700;
+  padding: 0 var(--space-1);
+}
+
+.v-farmer__grouphint {
+  margin: 0 0 var(--space-3);
+}
+
+.v-farmer__stack {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.v-farmer__counts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.v-farmer__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.v-farmer__duration {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(7.5rem, auto);
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.v-farmer__locrow {
+  margin-top: var(--space-3);
+}
+
+.v-farmer__locrow .btn {
+  margin-bottom: var(--space-2);
+}
+
+.v-farmer__locnote {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.v-farmer__photo label {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.v-farmer__photo input[type='checkbox'] {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.15rem;
+  flex: none;
+}
+
+.v-farmer__submit {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.v-farmer__submit .btn {
+  width: 100%;
+}
+
+.v-farmer__submithint {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ---------- triage feedback ---------- */
+
+.v-farmer__result .v-farmer__h2 {
+  margin-bottom: var(--space-1);
+}
+
+.v-farmer__okline {
+  margin: 0 0 var(--space-3);
+  font-weight: 600;
+}
+
+.v-farmer__badgerow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-2);
+}
+
+.v-farmer__score {
+  font-size: 0.85rem;
+}
+
+.v-farmer__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: var(--space-1);
+}
+
+/* ---------- reports list ---------- */
+
+.v-farmer__pagehead {
+  margin: 0;
+}
+
+.v-farmer__cases {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.v-farmer__casebtn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.v-farmer__casebtn .card {
+  transition: border-color 140ms var(--ease-out), box-shadow 140ms var(--ease-out),
+    transform 140ms var(--ease-out);
+}
+
+.v-farmer__casebtn:hover .card,
+.v-farmer__casebtn:focus-visible .card {
+  border-color: var(--brand);
+  box-shadow: var(--shadow-2);
+  transform: translateY(-1px);
+}
+
+.v-farmer__casetop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.v-farmer__casespecies {
+  font-weight: 700;
+}
+
+.v-farmer__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.v-farmer__casemeta {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: 0.9rem;
+}
+
+.v-farmer__casesyms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  align-items: center;
+  margin-top: var(--space-2);
+}
+
+.v-farmer__morecount {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.v-farmer__detail {
+  border-top: 1px solid var(--line);
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.v-farmer__facts {
+  margin: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.v-farmer__fact {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, 40%) minmax(0, 1fr);
+  gap: var(--space-2);
+}
+
+.v-farmer__fact dt {
+  color: var(--muted);
+}
+
+.v-farmer__fact dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.v-farmer__tlmeta {
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+
+.v-farmer__outcomebtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* ---------- wider screens ---------- */
+
+@media (min-width: 640px) {
+  .v-farmer__steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .v-farmer__submit {
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .v-farmer__submit .btn {
+    width: auto;
+  }
+}

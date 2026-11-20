@@ -1,0 +1,132 @@
+/* HerdSignal — authority dashboard. Every selector is scoped under
+   .v-dashboard. Mobile-first: single column at 360 px, --space-* tokens. */
+
+.v-dashboard {
+  display: block;
+}
+
+/* headline stats */
+.v-dashboard .stat-grid {
+  margin: var(--space-4) 0;
+}
+
+.v-dashboard .v-dash-num--emergency {
+  color: var(--danger);
+}
+
+/* breakdown bars (labeled bar rows) */
+.v-dashboard .v-dash-section {
+  margin: var(--space-5) 0;
+}
+
+.v-dashboard .v-dash-section h2 {
+  margin: 0 0 var(--space-3);
+}
+
+.v-dashboard .v-dash-bars {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.v-dashboard .bar-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.v-dashboard .bar-row .v-dash-bar-label {
+  flex: 0 0 7.5rem;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.v-dashboard .bar-row .bar-track {
+  flex: 1 1 auto;
+  display: block;
+  height: 0.9rem;
+  background: var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.v-dashboard .bar-row .bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--brand);
+  border-radius: 999px;
+}
+
+.v-dashboard .bar-row .v-dash-bar-value {
+  flex: 0 0 2.5rem;
+  text-align: right;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* outbreak signals */
+.v-dashboard .v-dash-signals {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.v-dashboard .v-dash-signal-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.v-dashboard .v-dash-signal-head h3 {
+  flex: 1 1 auto;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.v-dashboard .v-dash-signal .v-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-2) 0;
+}
+
+.v-dashboard .v-dash-members {
+  list-style: none;
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.v-dashboard a.v-dash-case-link {
+  display: inline-block;
+  color: var(--brand);
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: var(--space-1) var(--space-3);
+  background: var(--bg);
+  overflow-wrap: anywhere;
+}
+
+.v-dashboard a.v-dash-case-link:hover,
+.v-dashboard a.v-dash-case-link:focus-visible {
+  border-color: var(--brand);
+}
+
+/* empty states */
+.v-dashboard .v-empty-title {
+  font-weight: 700;
+  margin: 0 0 var(--space-1);
+}
+
+.v-dashboard .empty {
+  padding: var(--space-4);
+}
+
+/* wider screens: stat cards in more columns if the shell grid allows */
+@media (min-width: 720px) {
+  .v-dashboard .bar-row .v-dash-bar-label {
+    flex-basis: 10rem;
+  }
+}

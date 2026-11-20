@@ -1,0 +1,100 @@
+/* HerdSignal — cross-cutting pieces of the co-op print world:
+   authored icon family, photography, brand mark, step discs, signal bands. */
+
+/* ---- icon family (geometric SVG, one 1.75 stroke) ---- */
+
+.hs-icon { width: 1em; height: 1em; display: inline-flex; flex: none; }
+.hs-icon svg { width: 100%; height: 100%; display: block; }
+.hs-icon--inline { color: var(--brand); margin-right: 6px; vertical-align: -0.16em; }
+
+.hs-icon--disc {
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  color: var(--brand);
+  background: var(--brand-soft);
+  border-radius: 50%;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+/* step discs carry icons instead of digits */
+.v-farmer__stepnum { display: inline-flex; align-items: center; justify-content: center; }
+
+.v-farmer__stepnum .hs-icon { width: 16px; height: 16px; }
+
+.v-farmer__lochint .hs-icon { color: var(--muted); margin-right: 4px; vertical-align: -0.14em; }
+
+/* ---- brand mark ---- */
+
+.brand__mark {
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border-radius: 12px;
+  background: var(--brand);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+.brand__mark .hs-icon { width: 20px; height: 20px; }
+
+.brand__text { display: flex; flex-direction: column; }
+
+/* ---- photography (print captions, hairline frames) ---- */
+
+.v-farmer__photofigure { margin: 0 0 var(--space-4); }
+
+.v-farmer__photoimg {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  display: block;
+}
+
+.v-farmer__photocaption { margin: 6px 2px 0; font-size: 12.5px; }
+
+.about-photo { margin: 0 0 var(--space-4); }
+
+.about-photo img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  display: block;
+}
+
+.about-photo figcaption { margin: 6px 2px 0; font-size: 12.5px; color: var(--muted); }
+
+@media (max-width: 640px) {
+  .v-farmer__photoimg { height: 140px; }
+  .about-photo img { height: 170px; }
+}
+
+/* ---- signal surfaces: the amber print band, not side borders ---- */
+
+.v-dashboard .v-dash-signal,
+.v-vet .v-vet-signal {
+  border: 1px solid #ecd5ae;
+  border-block: 3px double #dfc08c;
+  background: var(--accent-soft);
+  box-shadow: none;
+}
+
+.v-vet .v-vet-signals {
+  border: 1px solid #ecd5ae;
+  border-block: 3px double #dfc08c;
+  background: var(--accent-soft);
+}
+
+.v-dash-signal-head { display: flex; align-items: flex-start; gap: 8px; }
+
+.hs-icon--signal { width: 20px; height: 20px; color: var(--accent); margin-top: 3px; }
